@@ -1,0 +1,30 @@
+'\" t
+.TH "GIT\-TRACK" "1" "09/15/2010" "Git 1\&.7\&.0\&.4" "Git Manual"
+.\" OMG, ZOMG, this man page is pure cargo cult. Damn groff.
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+git-track \- Make current branch track the origin
+.SH "SYNOPSIS"
+.sp
+\fIgit track\fR [<repository>] [<branch>]
+.SH "DESCRIPTION"
+.sp
+Makes the <branch> track a branch with the same name in <repository>
+.sp
+<repository> defaults to origin and <branch> defaults to current branch
+.sp
+.RE

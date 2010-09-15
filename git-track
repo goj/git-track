@@ -1,0 +1,30 @@
+#!/bin/bash
+function usage() {
+    man git-track
+    exit
+}
+
+REMOTE=
+BRANCH=
+while (( "$#" )); do
+    if  [[ $1 == "--help" ]] || [[  $1 == "-h" ]] ; then
+        usage
+    elif [[ -z $REMOTE ]]; then
+        REMOTE=$1
+    elif [[ -z $BRANCH ]]; then
+        BRANCH=$1
+    else
+        usage
+    fi
+    shift
+done
+
+if [[ -z $REMOTE ]]; then
+    REMOTE=origin
+fi
+
+if [[ -z $BRANCH ]]; then
+    BRANCH=`git symbolic-ref HEAD | sed -e 's:^refs/heads/::'`
+fi
+
+git branch --set-upstream $BRANCH $REMOTE/$BRANCH
